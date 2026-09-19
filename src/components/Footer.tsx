@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { motion } from 'framer-motion';
 const Twitter = (props: React.SVGProps<SVGSVGElement>) => <svg className='w-5 h-5 fill-current' {...props} viewBox='0 0 24 24'><path d='M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.05c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z'/></svg>;
 const Facebook = (props: React.SVGProps<SVGSVGElement>) => <svg className='w-5 h-5 fill-current' {...props} viewBox='0 0 24 24'><path d='M22.675 0h-21.35C.597 0 0 .597 0 1.325v21.351C0 23.403.597 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.597 1.323-1.324V1.325C24 .597 23.403 0 22.675 0z'/></svg>;
@@ -17,17 +16,17 @@ const TikTokIcon = ({ className }: { className?: string }) => (
 );
 
 const socials = [
-  { icon: <Twitter className="w-5 h-5" />, href: "#" },
-  { icon: <Facebook className="w-5 h-5" />, href: "#" },
-  { icon: <Instagram className="w-5 h-5" />, href: "#" },
-  { icon: <TikTokIcon />, href: "#" },
-  { icon: <Linkedin className="w-5 h-5" />, href: "#" },
-  { icon: <Youtube className="w-5 h-5" />, href: "#" },
+  { icon: <Twitter className="w-5 h-5" />, href: "https://twitter.com", target: "_blank" },
+  { icon: <Facebook className="w-5 h-5" />, href: "https://facebook.com", target: "_blank" },
+  { icon: <Instagram className="w-5 h-5" />, href: "https://instagram.com", target: "_blank" },
+  { icon: <TikTokIcon />, href: "https://tiktok.com", target: "_blank" },
+  { icon: <Linkedin className="w-5 h-5" />, href: "https://linkedin.com", target: "_blank" },
+  { icon: <Youtube className="w-5 h-5" />, href: "https://youtube.com", target: "_blank" },
 ];
 
 const Footer = () => {
   return (
-    <footer className="relative bg-black pt-32 pb-8 overflow-hidden z-20">
+    <footer id="contact" className="relative bg-black pt-32 pb-8 overflow-hidden z-20">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-electric/10 rounded-full blur-[120px] pointer-events-none" />
       
@@ -45,6 +44,8 @@ const Footer = () => {
                 <a 
                   key={i}
                   href={social.href}
+                  target={social.target}
+                  rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white hover:text-black hover:scale-110 transition-all duration-300"
                 >
                   {social.icon}
@@ -68,7 +69,7 @@ const Footer = () => {
             <ul className="space-y-3 text-white/60 text-sm">
               <li><a href="#speakers" className="hover:text-electric transition-colors">Speakers</a></li>
               <li><a href="#experience" className="hover:text-electric transition-colors">Sessions</a></li>
-              <li><a href="#" className="hover:text-electric transition-colors">Event Information</a></li>
+              <li><a href="#event" className="hover:text-electric transition-colors">Event Information</a></li>
               <li><a href="#partners" className="hover:text-electric transition-colors">Partnership</a></li>
             </ul>
           </div>
