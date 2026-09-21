@@ -9,8 +9,8 @@ interface CheckoutModalProps {
   onClose: () => void;
 }
 
-// NOTE: Replace this with your actual Paystack Public Key
-const PAYSTACK_PUBLIC_KEY = 'pk_test_1234567890abcdef1234567890abcdef12345678';
+// NOTE: Pulls from your .env file
+const PAYSTACK_PUBLIC_KEY = import.meta.env.VITE_PAYSTACK_PUBLIC_KEY || 'pk_test_1234567890abcdef1234567890abcdef12345678';
 
 const generateCode = () => {
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
