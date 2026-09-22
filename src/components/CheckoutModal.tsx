@@ -62,7 +62,18 @@ const CheckoutModal = ({ isOpen, onClose }: CheckoutModalProps) => {
   const handlePay = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !email) return;
-    initializePayment({ onSuccess, onClose: onClosePayment });
+
+    // Validate the key before sending the request to prevent 400 Bad Request
+    if (PAYSTACK_PUBLIC_KEY.includes('1234567890abcdef')) {
+      alert("Error: You are still using the fake test key. Please ensure your VITE_PAYSTACK_PUBLIC_KEY is set in Vercel and you have redeployed.");
+      return;
+    }
+    if (PAYSTACK_PUBLIC_KEY.startsWith('sk_')) {
+      alert("Error: You are using your Paystack SECRET key. You must use the PUBLIC key (starts with pk_test_ or pk_live_).");
+      return;
+    }
+
+    initializePayment(onSuccess, onClosePayment);
   };
 
   const resetAndClose = () => {
