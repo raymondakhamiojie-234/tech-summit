@@ -9,8 +9,9 @@ interface CheckoutModalProps {
   onClose: () => void;
 }
 
-// NOTE: Pulls from your .env file
-const PAYSTACK_PUBLIC_KEY = import.meta.env.VITE_PAYSTACK_PUBLIC_KEY || 'pk_test_1234567890abcdef1234567890abcdef12345678';
+// NOTE: Pulls from your .env file and aggressively removes any accidental spaces or quotes
+const rawKey = import.meta.env.VITE_PAYSTACK_PUBLIC_KEY || 'pk_test_1234567890abcdef1234567890abcdef12345678';
+const PAYSTACK_PUBLIC_KEY = rawKey.replace(/['"]/g, '').trim();
 
 const generateCode = () => {
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
