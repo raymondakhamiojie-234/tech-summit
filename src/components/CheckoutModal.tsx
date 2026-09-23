@@ -74,7 +74,7 @@ const CheckoutModal = ({ isOpen, onClose }: CheckoutModalProps) => {
       return;
     }
 
-    initializePayment(onSuccess, onClosePayment);
+    initializePayment({ onSuccess, onClose: onClosePayment });
   };
 
   const resetAndClose = () => {
