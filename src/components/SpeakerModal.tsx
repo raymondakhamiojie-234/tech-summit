@@ -38,7 +38,7 @@ const SpeakerModal: React.FC<SpeakerModalProps> = ({ speaker, isOpen, onClose })
             >
               <button 
                 onClick={onClose}
-                className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 text-white/80 hover:text-white hover:bg-white/20 transition-all"
+                className="absolute top-4 right-4 z-[100] p-2 rounded-full bg-black/50 text-white/80 hover:text-white hover:bg-white/20 transition-all cursor-pointer"
               >
                 <X size={24} />
               </button>
