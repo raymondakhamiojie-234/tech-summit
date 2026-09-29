@@ -42,6 +42,7 @@ const SpeakersSection = () => {
                   <img 
                     src={speaker.image} 
                     alt={speaker.name} 
+                    style={{ objectPosition: speaker.position || 'center' }}
                     className="w-full h-full object-cover grayscale opacity-60 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700 ease-out"
                   />
                 </div>
