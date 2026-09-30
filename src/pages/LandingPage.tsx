@@ -8,7 +8,6 @@ import WhatToExpect from '../components/WhatToExpect';
 import EventInfo from '../components/EventInfo';
 import Partners from '../components/Partners';
 import Footer from '../components/Footer';
-import TicketSection from '../components/TicketSection';
 
 const LandingPage = () => {
   const { scrollYProgress } = useScroll();
@@ -46,7 +45,6 @@ const LandingPage = () => {
       <main>
         <Hero />
         <EventInfo />
-        <TicketSection />
         <SpeakersSection />
         <TimelineSection />
         <WhatToExpect />
